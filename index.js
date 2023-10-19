@@ -16,9 +16,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
-// app.use('/',(req,res)=>{
-//     res.send("Hello guys, its backend");
-// })
+app.use('/',(req,res)=>{
+    res.send("Hello guys, its backend");
+})
 const authRouter = require('./routes/AuthRoute');
 const productRouter = require('./routes/ProductRoute');
 const blogRouter = require('./routes/BlogRoute');
