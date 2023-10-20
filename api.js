@@ -1,5 +1,6 @@
 const express =require('express');
 const dbConnect = require('./config/dbConnect');
+const fileupload = require('express-fileupload');
 
 const app = express();
 const dotenv = require('dotenv').config();
@@ -13,6 +14,7 @@ dbConnect();
 app.use(morgan("dev"))
 app.use(cors());
 app.use(bodyParser.json());
+app.use(fileupload({useTempFiles: true}))
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(cookieParser());
 
