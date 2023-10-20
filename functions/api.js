@@ -39,7 +39,7 @@ app.use('/api/v1/blogcategory',blogCatRouter);
 app.use('/api/v1/brand',brandRouter);
 app.use('/api/v1/coupon',couponRouter);
 app.use('/api/v1/color',colorRouter);
-app.useStaticAssets('/api/v1/upload',uploadRouter);
+app.use('/api/v1/upload',uploadRouter);
 app.use('/api/v1/enquiry',enqRouter);
 
 app.use(errorMiddleware);
