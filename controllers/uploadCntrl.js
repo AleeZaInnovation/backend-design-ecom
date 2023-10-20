@@ -1,8 +1,8 @@
 const fs = require("fs");
 const catchAsyncErrors = require("../middlewares/catchAsyncErrors");
-const {
+const
   cloudinary
-} = require("../utils/cloudinary");
+    = require("../utils/cloudinary");
 // exports.uploadImages = catchAsyncErrors(async (req, res) => {
 //   try {
 //     const uploader = (path) => cloudinaryUploadImg(path, "images");
@@ -32,7 +32,7 @@ exports.deleteImages = catchAsyncErrors(async (req, res) => {
   }
 });
 
-exports.newImages = catchAsyncErrors(async(req,res)=>{
+exports.newImages = catchAsyncErrors(async (req, res) => {
   const result = await cloudinary.uploader.upload(req.file.path, {
     folder: 'products',
   });
