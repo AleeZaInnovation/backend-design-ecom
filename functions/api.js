@@ -1,5 +1,4 @@
 const express =require('express');
-const serverless =  require ("serverless-http");
 const dbConnect = require('../config/dbConnect');
 
 const app = express();
@@ -44,8 +43,6 @@ app.use('/api/v1/upload',uploadRouter);
 app.use('/api/v1/enquiry',enqRouter);
 
 app.use(errorMiddleware);
-// app.listen(PORT,()=>{
-//     console.log(`Server is working on PORT ${PORT}`);
-// });
-
-module.exports.handler = serverless(app);
+app.listen(PORT,()=>{
+    console.log(`Server is working on PORT ${PORT}`);
+});
