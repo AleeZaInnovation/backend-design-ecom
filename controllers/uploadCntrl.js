@@ -33,7 +33,7 @@ exports.deleteImages = catchAsyncErrors(async (req, res) => {
 });
 
 exports.newImages = catchAsyncErrors(async (req, res) => {
-  const result = await cloudinary.uploader.upload(req.file.path, {
+  const result = await cloudinary.uploader.upload(req.file, {
     folder: 'products',
   });
 
