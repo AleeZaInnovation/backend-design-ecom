@@ -6,6 +6,7 @@ const router = express.Router();
 router.route("/").post(
     isAuthenticatedUser,
     authorizeRoles("admin"),
+    uploadPhoto.array("images", 10),
     productImgResize,
     uploadImages
 );
