@@ -22,15 +22,15 @@ const {
 //     throw new Error(error);
 //   }
 // });
-// exports.deleteImages = catchAsyncErrors(async (req, res) => {
-//   const { id } = req.params;
-//   try {
-//     const deleted = cloudinaryDeleteImg(id, "images");
-//     res.json({ message: "Deleted" });
-//   } catch (error) {
-//     throw new Error(error);
-//   }
-// });
+exports.deleteImages = catchAsyncErrors(async (req, res) => {
+  const { id } = req.params;
+  try {
+    const deleted = cloudinary(id, "images");
+    res.json({ message: "Deleted" });
+  } catch (error) {
+    throw new Error(error);
+  }
+});
 
 exports.newImages = catchAsyncErrors(async(req,res)=>{
   const result = await cloudinary.uploader.upload(req.file.path, {
